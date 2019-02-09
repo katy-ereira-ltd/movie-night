@@ -14,6 +14,9 @@
           <b-tab title="Watched Movies">
             <WatchedList/>
           </b-tab>
+          <b-tab title="Settings">
+            <Settings/>
+          </b-tab>
         </b-tabs>
       </b-card>
     </b-container>
@@ -24,6 +27,7 @@
 import MoviePicker from './components/MoviePicker.vue'
 import MovieList from './components/MovieList'
 import WatchedList from "./components/WatchedList";
+import Settings from "./components/Settings";
 
 export default {
   name: 'app',
@@ -31,6 +35,7 @@ export default {
     WatchedList,
     MoviePicker,
     MovieList,
+    Settings,
   }
 }
 </script>
