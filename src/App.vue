@@ -11,6 +11,9 @@
           <b-tab title="Movies List" active>
             <MovieList/>
           </b-tab>
+          <b-tab title="Add More Movies">
+            <MovieAdder/>
+          </b-tab>
           <b-tab title="Watched Movies">
             <WatchedList/>
           </b-tab>
@@ -26,6 +29,7 @@
 <script>
 import MoviePicker from './components/MoviePicker.vue'
 import MovieList from './components/MovieList'
+import MovieAdder from './components/MovieAdder'
 import WatchedList from "./components/WatchedList";
 import Settings from "./components/Settings";
 
@@ -35,6 +39,7 @@ export default {
     WatchedList,
     MoviePicker,
     MovieList,
+    MovieAdder,
     Settings,
   }
 }
