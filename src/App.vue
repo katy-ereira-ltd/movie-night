@@ -1,13 +1,22 @@
 <template>
   <div id="app">
+    <b-container class="bv-example-row mb-5">
+      <b-row>
+        <b-col>
+          <MoviePicker/>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
+import MoviePicker from './components/MoviePicker.vue'
 
 export default {
   name: 'app',
   components: {
+    MoviePicker,
   }
 }
 </script>
