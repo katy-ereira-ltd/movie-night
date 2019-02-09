@@ -7,7 +7,7 @@
         >
             <b-row>
                 <b-col class="d-flex w-100 justify-content-between">
-                    <h5 class="mr-4">{{ movie.title + movie.id }}</h5>
+                    <h5 class="mr-4">{{ movie.title }}</h5>
                     <div>
                         <i class="material-icons md-18 btn" v-on:click="remove(movie)" v-b-tooltip.hover title="Remove">not_interested</i>
                         <i class="material-icons md-18 btn" v-on:click="watch(movie)" v-b-tooltip.hover title="Watched">done</i>
