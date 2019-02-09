@@ -6,17 +6,26 @@
           <MoviePicker/>
         </b-col>
       </b-row>
+      <b-card no-body>
+        <b-tabs pills card>
+          <b-tab title="Movies List" active>
+            <MovieList/>
+          </b-tab>
+        </b-tabs>
+      </b-card>
     </b-container>
   </div>
 </template>
 
 <script>
 import MoviePicker from './components/MoviePicker.vue'
+import MovieList from './components/MovieList'
 
 export default {
   name: 'app',
   components: {
     MoviePicker,
+    MovieList,
   }
 }
 </script>
