@@ -11,10 +11,9 @@
         </div>
 
         <div class="form-group row">
-            <b-button type="submit" variant="primary" class="mb-2" v-if="!saving">Save</b-button>
-            <b-button variant="primary" class="mb-2" disabled v-if="saving">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Saving...
+            <b-button type="submit" variant="primary" class="mb-2" :disabled="saving">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="saving"></span>
+                {{ saving && 'Saving...' || 'Save'}}
             </b-button>
         </div>
     </b-form>
@@ -25,7 +24,7 @@
 
     export default {
         name: 'Settings',
-        data: () => {
+        data() {
             return {
                 saving: false,
                 apiKey: settingsRepository.get('apiKey')
@@ -35,11 +34,14 @@
             save() {
                 this.saving = true;
 
-                setTimeout(() => {
-                   settingsRepository.set('apiKey', this.apiKey);
-                   this.saving = false;
-                }, 1000);
+                this.think(1000).then(() => {
+                    settingsRepository.set('apiKey', this.apiKey);
+                    this.saving = false;
+                });
             },
+            think(milliseconds) {
+                return new Promise(resolve => setTimeout(resolve, milliseconds));
+            }
         }
     }
 </script>
