@@ -34,7 +34,7 @@
             stars() {
                 const full = Math.floor(this.rating);
                 const half = Math.round(this.rating - full);
-                const empty = Math.floor(10 - full - half);
+                const empty = Math.floor((this.max || 10) - full - half);
 
                 return {
                     full,
