@@ -35,6 +35,7 @@ jobs:
 
       # Run tests!
       - run: yarn lint
+      - run: yarn test:unit
   deploy-prod:
     docker:
       - image: circleci/node:lts
