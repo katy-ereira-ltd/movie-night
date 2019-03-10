@@ -1,3 +1,5 @@
+
+
 const moviesRepository = {
     storage: {
         movies: [
@@ -63,11 +65,7 @@ const moviesRepository = {
         this.persist();
     },
     remove (movie) {
-        this.storage.movies.forEach((item, key) => {
-            if (item.id === movie.id) {
-                this.storage.movies.splice(key, 1);
-            }
-        });
+        this.removeMovieFrom(movie, this.storage.movies);
 
         this.persist();
     },
@@ -78,17 +76,20 @@ const moviesRepository = {
         this.persist();
     },
     unwatch (movie) {
-        this.storage.watched.forEach((item, key) => {
-            if (item.id === movie.id) {
-                this.storage.watched.splice(key, 1);
-            }
-        });
+        this.removeMovieFrom(movie, this.storage.watched);
 
         this.persist();
     },
     persist () {
         localStorage.movies = JSON.stringify(this.storage);
-    }
+    },
+    removeMovieFrom (itemToRemove, array) {
+        array.forEach((item, key) => {
+            if (item.id === itemToRemove.id) {
+                array.splice(key, 1);
+            }
+        });
+    },
 };
 
 moviesRepository.mount();
