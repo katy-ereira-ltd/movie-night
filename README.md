@@ -1,6 +1,6 @@
 # Movie Night
 
-[![CircleCI](https://circleci.com/gh/katy-ereira-ltd/movie-night.svg?style=svg)](https://circleci.com/gh/katy-ereira-ltd/movie-night)
+[![CircleCI](https://circleci.com/gh/katy-ereira-ltd/movie-night.svg?style=svg)](https://circleci.com/gh/katy-ereira-ltd/movie-night) [![Maintainability](https://api.codeclimate.com/v1/badges/bd0cdc9d5ca05bb4d44e/maintainability)](https://codeclimate.com/github/katy-ereira-ltd/movie-night/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/bd0cdc9d5ca05bb4d44e/test_coverage)](https://codeclimate.com/github/katy-ereira-ltd/movie-night/test_coverage)
 
 Take the hassle out of movie nights with this automatic movie picker! Add the movies you want to watch, and let it do the hard
 work.
