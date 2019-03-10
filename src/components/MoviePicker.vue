@@ -56,16 +56,24 @@
         },
         methods: {
             pick() {
-                this.thinking = true;
-
-                setTimeout(() => {
+                this.think(2000).then(() => {
                     this.movie = moviesRepository.random();
-                    this.thinking = false;
-                }, 2000);
+                });
             },
             watch() {
                 moviesRepository.watch(this.movie);
                 this.movie = null;
+            },
+            think(milliseconds) {
+                this.thinking = true;
+
+                return new Promise(resolve => setTimeout(
+                    () => {
+                        this.thinking = false;
+                        resolve();
+                    },
+                    milliseconds
+                ));
             }
         }
     }

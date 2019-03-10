@@ -19,6 +19,14 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -35,6 +43,10 @@ jobs:
 
       # Run tests!
       - run: yarn lint
+      - run: yarn test:unit --coverage
+      - run: ./cc-test-reporter format-coverage --prefix /home/circleci/movie-night -t lcov -o tmp/coverage.json
+      - run: cat tmp/coverage.json
+      - run: ./cc-test-reporter upload-coverage -i tmp/coverage.json
   deploy-prod:
     docker:
       - image: circleci/node:lts
