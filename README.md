@@ -44,3 +44,15 @@ yarn install
 ```
 yarn serve
 ```
+
+## Testing
+
+### Unit Testing
+
+Unit tests are written using the [Vue Test Utils](https://vue-test-utils.vuejs.org) and [Jest](https://jestjs.io).
+
+To run unit tests:
+
+```
+yarn test:unit
+```
