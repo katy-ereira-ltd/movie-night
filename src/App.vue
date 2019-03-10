@@ -38,6 +38,8 @@ import MoviePicker from './components/MoviePicker.vue'
 import MovieList from './components/MovieList'
 import WatchedList from "./components/WatchedList";
 import Settings from "./components/Settings";
+import SearchMovies from "./components/movies/SearchMovies";
+import AddMovie from "./components/movies/AddMovie";
 
 export default {
   name: 'app',
@@ -46,6 +48,8 @@ export default {
     MoviePicker,
     MovieList,
     Settings,
+    SearchMovies,
+    AddMovie,
   }
 }
 </script>
