@@ -95,6 +95,8 @@
                     });
             },
             parseResults(items) {
+                this.searchResults.items = [];
+
                 items.forEach((item) => {
                     this.searchResults.items.push({
                         id: item.netflixid,
