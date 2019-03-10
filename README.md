@@ -1,6 +1,6 @@
 # Movie Night
 
-[![Build Status](https://travis-ci.org/katy-ereira-ltd/movie-night.svg?branch=master)](https://travis-ci.org/katy-ereira-ltd/movie-night)
+[![CircleCI](https://circleci.com/gh/katy-ereira-ltd/movie-night.svg?style=svg)](https://circleci.com/gh/katy-ereira-ltd/movie-night)
 
 Take the hassle out of movie nights with this automatic movie picker! Add the movies you want to watch, and let it do the hard
 work.
@@ -9,9 +9,10 @@ work.
 
 ## Some Facts
 
- - A single page application built using Vuejs.
- - This application uses local storage, so anyone can use it as long as they keep using the same browser. 👍 
- - Your data **is not shared or uploaded anywhere**.
+ - A single page application built using [Vuejs](https://vuejs.org).
+ - This application uses local data storage, which means:
+    - Application state is linked to your browser. 👍 
+    - Your data **is not shared or uploaded anywhere**.
  - Integrates with [uNoGS API](https://rapidapi.com/unogs/api/unogs) - subscription + API key required.
 
 ## Installation
