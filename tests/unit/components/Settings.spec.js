@@ -77,10 +77,14 @@ describe('Settings component', () => {
         wrapper.vm.save();
 
         expect(wrapper.vm.saving).toBe(true);
+        wrapper.vm.$forceUpdate();
 
-        expect(saveButton.text()).toBe('Saving...');
-        expect(saveButton.isVisible()).toBe(true);
-        expect(saveButton.attributes('disabled')).toBeDefined();
+        localVue.nextTick(() => {
+            expect(saveButton.text()).toBe('Saving...');
+            expect(saveButton.isVisible()).toBe(true);
+            expect(saveButton.attributes('disabled')).toBeDefined();
+            done()
+        });
 
         await setTimeout(() => {
             expect(wrapper.vm.saving).toBe(false);
